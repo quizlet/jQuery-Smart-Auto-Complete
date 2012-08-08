@@ -433,7 +433,7 @@
         }
 
         //right arrow & enter key
-        else if(ev.keyCode == '39' || ev.keyCode == '13'){
+        else if(ev.keyCode == '13'){ //ev.keyCode == '39' right arrow key
           var type_ahead_field = $(options.context).prev('.smart_autocomplete_type_ahead_field');
           if(options.resultsContainer && $(options.resultsContainer).is(':visible')){
             var current_selection = options.currentSelection;
