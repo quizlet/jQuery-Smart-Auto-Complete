@@ -384,6 +384,29 @@
 
       $(this).data("smart-autocomplete", options);
 
+      $(this).keyup(function(ev) {
+        if ([13, 38, 40].indexOf(ev.keyCode) !== -1)
+          return;
+
+        var options = $(this).data("smart-autocomplete");
+
+          var current_char_count = $(options.context).val().length;
+         //check whether the string has modified
+         if(options.originalCharCount == current_char_count)
+           return;
+
+         //check minimum and maximum number of characters are typed
+         if(current_char_count >= options.minCharLimit){
+          $(options.context).trigger('keyIn', [$(this).val()]);
+         }
+         else{
+            if(options.autocompleteFocused){
+              options.currentSelection = null;
+              $(options.context).trigger('lostFocus');
+            }
+         }
+      });
+
       // bind user events
       $(this).keydown(function(ev){
         //get the options
@@ -445,25 +468,6 @@
             $(options.context).trigger('itemSelect', [ type_ahead_field ] );
 
           return false;
-        }
-
-        else {
-         var current_char_count = $(options.context).val().length;
-         //check whether the string has modified
-         if(options.originalCharCount == current_char_count)
-           return;
-
-         //check minimum and maximum number of characters are typed
-         if(current_char_count >= options.minCharLimit){
-          $(options.context).trigger('keyIn', [$(this).val()]); 
-         }
-         else{
-            if(options.autocompleteFocused){ 
-              options.currentSelection = null;
-              $(options.context).trigger('lostFocus');
-            }
-         }
-
         }
       });
 
