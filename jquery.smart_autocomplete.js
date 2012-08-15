@@ -249,11 +249,12 @@
             color: 'silver'
           });
 
-          //trigger item over for first item
-          options.currentSelection = 0;
-          if(results_container)
-            $(context).trigger('itemFocus', results_container.children()[options.currentSelection]);
         }
+
+        //trigger item over for first item
+        options.currentSelection = 0;
+        if(results_container)
+          $(context).trigger('itemFocus', results_container.children()[options.currentSelection]);
 
         //show the results container after aligning it with the field 
         if(results_container){
