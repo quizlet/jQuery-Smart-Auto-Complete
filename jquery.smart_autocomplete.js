@@ -499,8 +499,8 @@
       //$(this).blur(function(ev){
       $(document).bind("focusin click", function(ev){
         if(options.autocompleteFocused){ 
-          var elemIsParent = $.contains(options.resultsContainer[0], ev.target);
-          if(ev.target == options.resultsContainer[0] || ev.target == options.context || elemIsParent) return
+          var elemIsParent  = $(options.resultsContainer[0], ev.target).size();
+          if(ev.target == options.resultsContainer[0] || ev.target == options.context || elemIsParent == 1) return;
 
           $(options.context).closest("form").unbind("keydown.block_for_smart_autocomplete");
           $(options.context).trigger('lostFocus');
