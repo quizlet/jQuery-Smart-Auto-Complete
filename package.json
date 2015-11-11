@@ -1,0 +1,16 @@
+{
+	"name": "jquery-smart-autocomplete",
+	"version": "0.0.1",
+	"description": "Quizlet's fork of laktek's jQuery-Smart-Auto-Complete",
+	"main": "jquery.smart_autocomplete.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/quizlet/jQuery-Smart-Auto-Complete"
+	},
+	"author": "Quizlet",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/quizlet/jQuery-Smart-Auto-Complete/issues"
+	},
+	"homepage": "https://github.com/quizlet/jQuery-Smart-Auto-Complete"
+}
