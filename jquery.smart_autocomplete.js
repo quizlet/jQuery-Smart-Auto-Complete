@@ -48,7 +48,7 @@
  })
 */
 
-(function($){
+module.exports = function($){
   $.fn.smartAutoComplete = function(){    
 
     if(arguments.length < 1){
@@ -545,4 +545,4 @@
     });
       
   }
-})(jQuery);
+};
